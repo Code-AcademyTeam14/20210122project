@@ -39,9 +39,9 @@ void itob(int n, char s[], int b) {
     {
         temp= n%b;
         if (temp<10)
-            s[i]= temp +'0';
+            s[i]= temp + 48;
         else
-            s[i]= temp +'A';
+            s[i]= temp + 55;
         n= n/b;
         i++;
     }
