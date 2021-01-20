@@ -47,7 +47,7 @@ void itob(int n, char s[], int b) {
 
     for (int j = i-1; j>= 0 ;j--)
     {
-        printf("%c",s[i]);
+        printf("%c",s[j]);
     }
 
 
