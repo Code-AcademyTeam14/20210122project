@@ -29,6 +29,31 @@ void itob(int n, char s[], int b) {
 	return;
 }
 
+/*
+void itob(int n, char s[], int b) {
+	
+    int i = 0;
+    int temp;
+
+    while (n!=0)
+    {
+        temp = 0;
+        temp = n % b;
+        s[i] = temp;
+        i++;
+
+        n = n / b;
+    }
+
+    for (int j = i-1; j>= 0 ;j--)
+    {
+        printf("%c",s[i]);
+    }
+
+
+	return;
+}
+*/
 
 /*// function to convert decimal to hexadecimal 
 void decToHexa(int n) 
