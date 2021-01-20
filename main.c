@@ -32,24 +32,26 @@ void itob(int n, char s[], int b) {
 /*
 void itob(int n, char s[], int b) {
 	
-    int i = 0;
-    int temp;
-
-    while (n!=0)
+  int temp, i=0, sign= 0;
+    if (n==0) s[i++]='0';
+    if (n<0 ) {sign= -1; n= -n;}
+    while (n!=0) 
     {
-        temp = 0;
-        temp = n % b;
-        s[i] = temp;
+        temp= n%b;
+        if (temp<10)
+            s[i]= temp +'0';
+        else
+            s[i]= temp +'A';
+        n= n/b;
         i++;
-
-        n = n / b;
     }
+    if (sign== -1) s[i++]= '-';
+    s[i]= 0;
 
-    for (int j = i-1; j>= 0 ;j--)
+    for (int j = i-1;j>=0;j--)
     {
         printf("%c",s[j]);
     }
-
 
 	return;
 }
