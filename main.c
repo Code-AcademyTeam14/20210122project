@@ -11,19 +11,29 @@ void itob(int n, char s[], int b);
 int main(void) {
 	
 	// Client entered integer
-	int n;
+	int n = 1;
 	
 	// Base of counting system for the new number
-	int b;
+	int b = 2;
 	
 	printf("Enter a whole number: ");
 	scanf("%d", &n);
 	
+	while (n < 0) {
+		printf("\nEnter a valid whole number (greater than 0): ");
+		scanf("%d", &n);
+	}
+	
 	// String produced from integer
 	char s[n];
 	
-	printf("Enter a base for conversion: ");
+	printf("\nEnter a base for conversion: ");
 	scanf("%d", &b);
+	
+	while (b < 2 || b > 36) {
+		printf("\nEnter a valid base for conversion (between 2 and 36): ");
+		scanf("%d", &b);
+	}
 	
 	itob(n, s, b);
 	
@@ -32,69 +42,24 @@ int main(void) {
 
 void itob(int n, char s[], int b) {
 	
-	return;
-}
-
-/*
-void itob(int n, char s[], int b) {
+	int count = 0;
 	
-  int temp, i=0, sign= 0;
-    if (n==0) s[i++]='0';
-    if (n<0 ) {sign= -1; n= -n;}
-    while (n!=0) 
-    {
-        temp= n%b;
-        if (temp<10)
-            s[i]= temp + 48;
-        else
-            s[i]= temp + 55;
-        n= n/b;
-        i++;
-    }
-    if (sign== -1) s[i++]= '-';
-    s[i]= 0;
+	printf("\n%d (10) -> ", n);
+	
+	do {
+		s[count] = '0' + n % b;
+		if (n % b > 9) {
+			s[count] = 'A' + (n % b);
+		}
+		count++;
+		n /= b;
+	} while (n > 0);
 
-    for (int j = i-1;j>=0;j--)
-    {
-        printf("%c",s[j]);
-    }
+	while (count-- > 0) {
+		printf("%c", s[count]);
+	}
 
+	printf(" (%d)\n", b);
+	
 	return;
 }
-*/
-
-/*// function to convert decimal to hexadecimal 
-void decToHexa(int n) 
-{    
-    // char array to store hexadecimal number 
-    char hexaDeciNum[100]; 
-      
-    // counter for hexadecimal number array 
-    int i = 0; 
-    while(n!=0) 
-    {    
-        // temporary variable to store remainder 
-        int temp  = 0; 
-          
-        // storing remainder in temp variable. 
-        temp = n % 16; 
-          
-        // check if temp < 10 
-        if(temp < 10) 
-        { 
-            hexaDeciNum[i] = temp + 48; 
-            i++; 
-        } 
-        else
-        { 
-            hexaDeciNum[i] = temp + 55; 
-            i++; 
-        } 
-          
-        n = n/16; 
-    } 
-      
-    // printing hexadecimal number array in reverse order 
-    for(int j=i-1; j>=0; j--) 
-        cout << hexaDeciNum[j]; 
-}*/
