@@ -49,7 +49,7 @@ void itob(int n, char s[], int b) {
 	do {
 		s[count] = '0' + n % b;
 		if (n % b > 9) {
-			s[count] = 'A' + (n % b);
+			s[count] = 55 + (n % b);
 		}
 		count++;
 		n /= b;
