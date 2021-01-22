@@ -47,10 +47,14 @@ void itob(int n, char s[], int b) {
 	printf("\n%d (10) -> ", n);
 	
 	do {
-		s[count] = '0' + n % b;
 		if (n % b > 9) {
 			s[count] = 55 + (n % b);
 		}
+		else
+		{
+			s[count] = '0' + n % b;
+		}
+		
 		count++;
 		n /= b;
 	} while (n > 0);
