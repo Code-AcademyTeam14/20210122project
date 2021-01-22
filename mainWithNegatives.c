@@ -16,9 +16,17 @@ int main(void) {
 	// Base of counting system for the new number
 	int b = 2;
 	
+	// Determine if entered number is negative
+	char isNegative = 0;
+	
 	printf("Enter a whole number: ");
 	scanf("%d", &n);
 	
+	if (n < 0) {
+		isNegative = 1;
+		n = -n;
+	}
+
 	// String produced from integer
 	char s[n];
 	
@@ -29,6 +37,12 @@ int main(void) {
 		printf("\nEnter a valid base for conversion (between 2 and 36): ");
 		scanf("%d", &b);
 	}
+
+	// Print result to the console
+	printf("\n%d (10) -> ", n);	
+	if (isNegative != 0) {
+		printf("-");
+	}
 	
 	itob(n, s, b);
 	
@@ -38,14 +52,6 @@ int main(void) {
 void itob(int n, char s[], int b) {
 	
 	int count = 0;
-	char negative = 0;
-	
-	printf("\n%d (10) -> ", n);
-	
-	if (n < 0) {
-		negative = 1;
-		n = -n;
-	}
 	
 	do {
 		if (n % b > 9) {
@@ -59,10 +65,6 @@ void itob(int n, char s[], int b) {
 		count++;
 		n /= b;
 	} while (n > 0);
-	
-	if (negative != 0) {
-		s[count++] = '-';
-	}
 	
 	while (count-- > 0) {
 		printf("%c", s[count]);
