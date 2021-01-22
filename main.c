@@ -20,7 +20,7 @@ int main(void) {
 	scanf("%d", &n);
 	
 	while (n < 0) {
-		printf("\nEnter a valid whole number (greater than 0): ");
+		printf("\nEnter a valid whole number (greater than or equal to 0): ");
 		scanf("%d", &n);
 	}
 	
