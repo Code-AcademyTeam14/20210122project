@@ -10,13 +10,13 @@ void itob(int n, char s[], int b);
 
 int main(void) {
 	
-	// Client entered integer
+	/* Client entered integer */
 	int n = 0;
 	
-	// Base of counting system for the new number
+	/* Base of counting system for the new number */
 	int b = 2;
 	
-	// Determine if entered number is negative
+	/* Determine if entered number is negative */
 	char isNegative = 0;
 	
 	printf("Enter a whole number: ");
@@ -27,7 +27,7 @@ int main(void) {
 		n = -n;
 	}
 
-	// String produced from integer
+	/* String produced from integer */
 	char s[n];
 	
 	printf("\nEnter a base for conversion: ");
@@ -38,7 +38,7 @@ int main(void) {
 		scanf("%d", &b);
 	}
 
-	// Print result to the console
+	/* Print result to the console */
 	printf("\n%d (10) -> ", n);	
 	if (isNegative != 0) {
 		printf("-");

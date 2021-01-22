@@ -10,10 +10,10 @@ void itob(int n, char s[], int b);
 
 int main(void) {
 	
-	// Client entered integer
+	/* Client entered integer */
 	int n = 1;
 	
-	// Base of counting system for the new number
+	/* Base of counting system for the new number */
 	int b = 2;
 	
 	printf("Enter a whole number: ");
@@ -24,7 +24,7 @@ int main(void) {
 		scanf("%d", &n);
 	}
 	
-	// String produced from integer
+	/* String produced from integer */
 	char s[n];
 	
 	printf("\nEnter a base for conversion: ");
