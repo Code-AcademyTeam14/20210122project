@@ -50,8 +50,7 @@ void itob(int n, char s[], int b) {
 		if (n % b > 9) {
 			s[count] = 55 + (n % b);
 		}
-		else
-		{
+		else {
 			s[count] = '0' + n % b;
 		}
 		
