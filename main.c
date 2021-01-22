@@ -11,7 +11,7 @@ void itob(int n, char s[], int b);
 int main(void) {
 	
 	/* Client entered integer */
-	int n = 1;
+	int n = 0;
 	
 	/* Base of counting system for the new number */
 	int b = 2;
