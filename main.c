@@ -54,7 +54,9 @@ void itob(int n, char s[], int b) {
 		count++;
 		n /= b;
 	} while (n > 0);
-
+	
+	s[count] = '\0';
+	
 	while (count-- > 0) {
 		printf("%c", s[count]);
 	}
