@@ -41,7 +41,11 @@ int main(void) {
 	/* Print result to the console */
 	printf("\n%d (10) -> ", n);	
 	if (isNegative != 0) {
-		printf("-");
+		if (b == 2) {
+			printf("1b");	
+		} else {
+			printf("-");
+		}
 	}
 	
 	itob(n, s, b);
